@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: append-data-api
+    ports:
+      - "9988:9988"
+    volumes:
+      - ./src/data:/app/src/data
+      - ./config.yml:/app/config.yml
+    restart: unless-stopped
